@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FlagCanvas } from "@/components/flag-canvas";
+import { Blob, LondrinaCutout } from "@/components/paper-shapes";
 
 const INK = "bg-[#14172b] text-white";
 
@@ -15,6 +16,13 @@ export default function Home() {
     // O degradê em CSS é o fundo de reserva: aparece no primeiro paint e sem WebGL.
     <main className="relative min-h-svh overflow-hidden bg-[linear-gradient(#5bcefa_0_20%,#f5a9b8_20%_40%,#fff_40%_60%,#f5a9b8_60%_80%,#5bcefa_80%_100%)] text-[#14172b]">
       <FlagCanvas className="absolute inset-0 h-full w-full" />
+
+      {/* Colagem: o mapa de Londrina como papel recortado, com duas manchas orgânicas. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-[5] overflow-hidden">
+        <LondrinaCutout className="absolute left-1/2 top-[54%] w-[92vw] max-w-none -translate-x-1/2 -translate-y-1/2 rotate-[6deg] lg:left-[24%] lg:top-1/2 lg:w-[44vw]" />
+        <Blob className="absolute -right-10 -top-8 w-32 rotate-12 lg:-top-16 lg:right-[4%] lg:w-72" />
+        <Blob variant={1} fill="#ffffff" className="absolute -bottom-12 -right-12 w-40 -rotate-12 lg:-bottom-20 lg:right-[2%] lg:w-96" />
+      </div>
 
       <div className="relative z-10 mx-auto flex min-h-svh max-w-6xl flex-col items-center justify-center gap-10 px-6 py-12 lg:flex-row lg:gap-20 lg:px-12">
         {/* O logo como folha xerocada colada com fita. */}
@@ -50,10 +58,6 @@ export default function Home() {
               </p>
             ))}
           </div>
-
-          <p className="-rotate-2 font-[family-name:var(--font-hand)] text-3xl font-bold sm:text-4xl">
-            a gente tá chegando ♥
-          </p>
         </div>
       </div>
     </main>
