@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Hanken_Grotesk, Syne } from "next/font/google";
+import { Geist, Geist_Mono, Hanken_Grotesk, Shrikhand } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const display = Syne({
+const display = Shrikhand({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: "400",
 });
 
 const body = Hanken_Grotesk({

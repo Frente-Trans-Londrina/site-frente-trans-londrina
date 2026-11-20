@@ -12,7 +12,7 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col gap-6">
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(4.5rem,19vw,16rem)] font-extrabold leading-[0.82] tracking-tighter">
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(4.5rem,27vw,17rem)] font-normal leading-[0.95]">
             Em
             <br />
             breve.
